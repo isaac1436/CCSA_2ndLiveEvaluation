@@ -12,13 +12,12 @@ namespace Hospital_Management_System
         public virtual string Name { get; set; }
         public virtual char gender { get; set; }
         public virtual Hospital hospital { get; set; }
-        //public int calcBills(Patient patient)
-        //{
-        //    int totalAmt;
+        public virtual double calcBills(Patient patient)
+        {
+            double totalAmt=patient.netWorth;
 
 
-        //    return totalAmt;
-        //}
-
+            return totalAmt;
+        }
     }
 }

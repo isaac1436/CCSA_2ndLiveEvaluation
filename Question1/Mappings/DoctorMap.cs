@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Mapping;
@@ -21,6 +17,7 @@ namespace Hospital_Management_System.Mappings
             References(x=>x.DocsHospital);
             HasMany(x => x.Patients);
             HasMany(x => x.AppointedNurses);
+            Map(x => x.gender);
         }
     }
 }

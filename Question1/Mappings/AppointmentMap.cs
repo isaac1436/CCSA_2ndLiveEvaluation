@@ -6,14 +6,15 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace Hospital_Management_System
 {
-    public class NurseMap:ClassMap<Nurse>
+    public class AppointmentMap:ClassMap<Appointment>
     {
-        public NurseMap()
+        public AppointmentMap()
         {
-            Id(x => x.EmployeeID);
-            Map(x => x.Name);
-            Map(x=>x.gender);
-            HasOne(x=>x.currentDoctor);
+            Id(x => x.ID);
+
+            Map(x=>x.DateOfAppointment);
+
+            References(x => x.doctor);
         }
     }
 }

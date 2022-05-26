@@ -9,9 +9,15 @@ using FluentNHibernate.Mapping;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
-namespace Hospital_Management_System.Mappings
+namespace Hospital_Management_System
 {
-    internal class PharmacistMap
+    public class PharmacistMap:ClassMap<Pharmacist>
     {
+        public PharmacistMap()
+        {
+            Id(x => x.EmployeeID);
+            HasOne(x => x.hospital);
+            Map(x => x.Name);
+        }
     }
 }

@@ -16,8 +16,8 @@ namespace Hospital_Management_System
         public virtual char gender { get; set; }
         public virtual string Condition { get; set; }
         public virtual Hospital hospital { get; set; }
-        public virtual bool Confirmappointment { get;set; }
-        public Appointment appointment { get; set; }
+        public virtual double netWorth { get;set; }
+        public virtual Appointment appointment { get; set; }
 
     }
 }

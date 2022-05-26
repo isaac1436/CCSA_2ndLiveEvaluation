@@ -8,17 +8,15 @@ namespace Hospital_Management_System
 {
     public class Appointment
     {
-        public DateOnly DateOfAppointment
+        public virtual int ID { get; set; }
+        public virtual string DateOfAppointment { get; set; }
+        public virtual Doctor doctor { get; set; }
+
+        public Appointment()
         {
-            get { return DateOfAppointment; }
-            set
-            {
-                Random r = new Random();
-                DateOfAppointment = DateOnly.FromDateTime(DateTime.Today.AddDays(r.Next(1,8)));
-            }
+            Random r = new Random();
+            DateOnly day = DateOnly.FromDateTime(DateTime.Today.AddDays(r.Next(1, 8)));
+            DateOfAppointment = day.ToString();
         }
-
-        public Doctor doctor { get; set; }
-
     }
 }

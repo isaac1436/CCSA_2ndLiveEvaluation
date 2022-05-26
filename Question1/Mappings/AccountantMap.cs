@@ -12,8 +12,8 @@ namespace Hospital_Management_System
         {
             Id(x => x.EmployeeID);
             Map(x => x.Name);
-            Map(x => x.hospital);
-            Map(x => x.PatientBills);
+            HasOne(x => x.hospital);
+            Map(x => x.gender);
         }
     }
 }

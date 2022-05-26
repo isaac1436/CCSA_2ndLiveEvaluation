@@ -10,10 +10,10 @@ namespace Hospital_Management_System
     {
         public virtual int EmployeeID { get; set; }
         public virtual string Name { get; set; }
-        public Hospital hospital { get; set; }
+        public virtual Hospital hospital { get; set; }
         public virtual List<Patient> Patients { get { return Patients; } set { Patients.AddRange(hospital.HospitalPatients); } }
 
-        public bool checkReg(Patient patient)
+        public virtual bool checkReg(Patient patient)
         {
             if(patient.HospitalNumber == null)
             {
@@ -22,9 +22,9 @@ namespace Hospital_Management_System
             }
             else { return true; }
         }
-        public void appointmentCheck(Patient patient)
+        public virtual void appointmentCheck(Patient patient)
         {
-            if (patient.appointment == null) { patient.appointment.DateOfAppointment.AddDays(1); }
+            if (patient.appointment == null) { patient.appointment = new Appointment(); }
         }
     }
 }

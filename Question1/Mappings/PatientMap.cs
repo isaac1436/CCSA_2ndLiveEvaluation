@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernate.Cfg;
+﻿using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Mapping;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
-namespace Hospital_Management_System.Mappings
+namespace Hospital_Management_System
 {
-    internal class PatientMap
+    public class PatientMap:ClassMap<Patient>
     {
+        public PatientMap()
+        {
+            Id(x => x.ID);
+            Map(x => x.Name);
+            Map(x => x.HospitalNumber);
+            Map(x => x.gender);
+            Map(x => x.phoneNo);
+            Map(x => x.Condition);
+            Map(x => x.netWorth);
+            HasOne(x => x.appointment);
+            References(x => x.Doctor);
+            References(x=>x.hospital);
+        }
     }
 }
