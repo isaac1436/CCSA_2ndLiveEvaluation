@@ -13,6 +13,7 @@ namespace Hospital_Management_System
         public virtual string Name { get; set; }
         public virtual Doctor Doctor { get; set; }
         public virtual string phoneNo { get; set; }
+        public virtual bool regStatus { get; set; }
         public virtual char gender { get; set; }
         public virtual string Condition { get; set; }
         public virtual Hospital hospital { get; set; }

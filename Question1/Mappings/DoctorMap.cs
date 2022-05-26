@@ -15,6 +15,7 @@ namespace Hospital_Management_System.Mappings
             Map(x => x.Name);
             Map(x=>x.PhoneNo);
             References(x=>x.DocsHospital);
+            HasMany(x => x.appointments);
             HasMany(x => x.Patients);
             HasMany(x => x.AppointedNurses);
             Map(x => x.gender);

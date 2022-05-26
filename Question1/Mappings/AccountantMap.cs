@@ -13,7 +13,7 @@ namespace Hospital_Management_System
             Id(x => x.EmployeeID);
             Map(x => x.Name);
             HasOne(x => x.hospital);
-            Map(x => x.gender);
+            Map(x => x.Gender);
         }
     }
 }

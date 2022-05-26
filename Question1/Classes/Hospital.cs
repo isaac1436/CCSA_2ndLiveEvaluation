@@ -17,5 +17,18 @@ namespace Hospital_Management_System
         public virtual Receptionist receptionist { get; set; }
         public virtual Pharmacist pharmacist { get; set; }
         public virtual Accountant accountant { get; set; }
+
+        public Hospital()
+        {
+
+        }
+
+        public Hospital(List<Doctor> docs, List<Nurse> nurses,List<Patient> patients)
+        {
+            Doctors=docs.ToList();
+            Nurses=nurses.ToList();
+            HospitalPatients=patients.ToList();
+        }
+
     }
 }

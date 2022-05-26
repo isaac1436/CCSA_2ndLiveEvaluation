@@ -6,7 +6,7 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace Hospital_Management_System
 {
-    public class PatientMap:ClassMap<Patient>
+    public class PatientMap : ClassMap<Patient>
     {
         public PatientMap()
         {
@@ -17,9 +17,10 @@ namespace Hospital_Management_System
             Map(x => x.phoneNo);
             Map(x => x.Condition);
             Map(x => x.netWorth);
+            Map(x => x.regStatus);
             HasOne(x => x.appointment);
             References(x => x.Doctor);
-            References(x=>x.hospital);
+            References(x => x.hospital);
         }
     }
 }

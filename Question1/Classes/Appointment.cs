@@ -18,5 +18,6 @@ namespace Hospital_Management_System
             DateOnly day = DateOnly.FromDateTime(DateTime.Today.AddDays(r.Next(1, 8)));
             DateOfAppointment = day.ToString();
         }
+
     }
 }

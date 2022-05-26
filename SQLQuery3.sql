@@ -1,0 +1,1 @@
+﻿select * from Patient where Patient.regStatus = 'true'

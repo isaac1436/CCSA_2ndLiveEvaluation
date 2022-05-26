@@ -12,25 +12,10 @@ namespace Hospital_Management_System
         public virtual string Name { get; set; }
         public virtual string PhoneNo { get; set; }
         public virtual char gender { get; set; }
+        public List<Appointment> appointments { get; set; }
         public virtual Hospital DocsHospital { get; set; }
-        public virtual List<Patient> Patients
-        {
-            get { return Patients; }
-            set
-            {
-                checkAppointments(DocsHospital.HospitalPatients);
-
-            }
-        }
-        public virtual List<Nurse> AppointedNurses
-        {
-            get { return AppointedNurses; }
-            set
-            {
-                assignNurse(DocsHospital.Nurses);
-            }
-        }
-
+        public virtual List<Patient> Patients { get; set; }
+        public virtual List<Nurse> AppointedNurses { get; set; }
         public virtual void checkAppointments(List<Patient> people)
         {
             foreach (Patient person in people)
@@ -52,6 +37,8 @@ namespace Hospital_Management_System
                 }
             }
         }
+
+
     }
 
 }

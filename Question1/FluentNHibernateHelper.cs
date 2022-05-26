@@ -11,9 +11,9 @@ namespace Hospital_Management_System
     public class FluentNHibernateHelper
     {
         //The session factory links your objects/code to your database
-        public ISessionFactory _sessionFactory;
+        public static ISessionFactory? _sessionFactory;
 
-        public ISessionFactory SessionFactory
+        public static ISessionFactory SessionFactory
         {
             get
             {
@@ -27,7 +27,7 @@ namespace Hospital_Management_System
         }
 
 
-        public void InitialiseSessionFactory()
+        public static void InitialiseSessionFactory()
         {
             //Fluently.Configure( ) connects your session factory to your database
             //To initialise your database you need your connection string as it gives you access to your database
@@ -50,9 +50,39 @@ namespace Hospital_Management_System
 
         }
 
-        public ISession OpenSession()
+        public static ISession OpenSession()
         {
             return SessionFactory.OpenSession();
+        }
+
+        public static void saveData<T>(T model)
+        {
+            var session = FluentNHibernateHelper.OpenSession();
+            using (var transaction = session.BeginTransaction())
+            {
+                session.Save(model);
+                transaction.Commit();
+            }
+        }
+
+        public static void updateData<T>(T model)
+        {
+            var session = OpenSession();
+            using (var transaction = session.BeginTransaction())
+            {
+                session.Update(model);
+                transaction.Commit();
+            }
+        }
+
+        public static void deleteData<T>(T model)
+        {
+            var session = OpenSession();
+            using (var transaction = session.BeginTransaction())
+            {
+                session.Delete(model);
+                transaction.Commit();
+            }
         }
     }
 }
