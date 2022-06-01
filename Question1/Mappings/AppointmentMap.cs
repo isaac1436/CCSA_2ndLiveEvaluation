@@ -15,6 +15,8 @@ namespace Hospital_Management_System
             Map(x=>x.DateOfAppointment);
 
             References(x => x.doctor);
+
+            References(x => x.patient);
         }
     }
 }

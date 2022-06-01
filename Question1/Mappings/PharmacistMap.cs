@@ -15,9 +15,10 @@ namespace Hospital_Management_System
     {
         public PharmacistMap()
         {
-            Id(x => x.EmployeeID);
+            Map(x => x.EmployeeID);
             HasOne(x => x.hospital);
-            Map(x => x.Name);
+            Id(x => x.Name);
+            Map(x => x.gender);
         }
     }
 }

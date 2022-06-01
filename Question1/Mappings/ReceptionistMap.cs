@@ -10,10 +10,10 @@ namespace Hospital_Management_System
     {
         public ReceptionistMap()
         {
-            Id(x => x.EmployeeID);
-            Map(x => x.Name);
+            Map(x => x.EmployeeID);
+            Id(x => x.Name);
+            Map(x => x.gender);
             HasOne(x => x.hospital);
-            HasMany(x => x.Patients);
         }
     }
 }

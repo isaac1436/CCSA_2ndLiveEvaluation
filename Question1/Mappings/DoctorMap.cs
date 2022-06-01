@@ -5,20 +5,20 @@ using FluentNHibernate.Mapping;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 
-namespace Hospital_Management_System.Mappings
+namespace Hospital_Management_System
 {
     internal class DoctorMap:ClassMap<Doctor>
     {
         public DoctorMap()
         {
-            Id(x => x.EmployeeID);
-            Map(x => x.Name);
+            Map(x => x.EmployeeID);
+            Id(x => x.Name);
             Map(x=>x.PhoneNo);
-            References(x=>x.DocsHospital);
+            Map(x => x.gender);
             HasMany(x => x.appointments);
             HasMany(x => x.Patients);
+            References(x => x.DocsHospital);            
             HasMany(x => x.AppointedNurses);
-            Map(x => x.gender);
         }
     }
 }

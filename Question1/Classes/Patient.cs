@@ -11,7 +11,7 @@ namespace Hospital_Management_System
         public virtual int ID { get; set; }
         public virtual int HospitalNumber { get; set; }
         public virtual string Name { get; set; }
-        public virtual Doctor Doctor { get; set; }
+        public virtual Doctor currentDoctor { get; set; }
         public virtual string phoneNo { get; set; }
         public virtual bool regStatus { get; set; }
         public virtual char gender { get; set; }

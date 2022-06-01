@@ -10,8 +10,8 @@ namespace Hospital_Management_System
     {
         public AccountantMap()
         {
-            Id(x => x.EmployeeID);
-            Map(x => x.Name);
+            Map(x => x.EmployeeID);
+            Id(x => x.Name);
             HasOne(x => x.hospital);
             Map(x => x.Gender);
         }

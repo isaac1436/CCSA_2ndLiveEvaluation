@@ -10,15 +10,16 @@ namespace Hospital_Management_System
     {
         public HospitalMap()
         {
-            Id(x => x.ID);
-            Map(x => x.Name);
+            Map(x => x.ID);
+            Id(x => x.Name);
             Map(x => x.Address);
-            HasMany(x => x.HospitalPatients);
+            References(x => x.accountant);
+            References(x => x.pharmacist);
+            References(x => x.receptionist);
+            HasMany(x => x.Patients);
             HasMany(x => x.Doctors);
             HasMany(x => x.Nurses);
-            HasOne(x => x.accountant);
-            HasOne(x => x.pharmacist);
-            HasOne(x => x.receptionist);
+            
         }
     }
 }

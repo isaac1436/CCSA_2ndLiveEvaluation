@@ -9,14 +9,15 @@ namespace Hospital_Management_System
     public class Appointment
     {
         public virtual int ID { get; set; }
-        public virtual string DateOfAppointment { get; set; }
+        public virtual DateTime DateOfAppointment { get { return DateOfAppointment; } set { setAppointment(); } }
         public virtual Doctor doctor { get; set; }
+        public virtual Patient patient { get; set; }
 
-        public Appointment()
+        public virtual void setAppointment()
         {
             Random r = new Random();
-            DateOnly day = DateOnly.FromDateTime(DateTime.Today.AddDays(r.Next(1, 8)));
-            DateOfAppointment = day.ToString();
+            DateTime day = DateTime.Today.AddDays(r.Next(1, 8));
+            DateOfAppointment = day;
         }
 
     }
